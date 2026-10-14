@@ -12,17 +12,41 @@ Everything here is under the **MIT licence**: use, copy, change and ship it, com
 or not. Keep the copyright and licence notice with any copy or substantial portion. See
 [LICENSE](LICENSE).
 
-## Install a tool or plugin
+## Turn on the tools in this repo
+
+DSC Drafter installs this repository for you. Its tools start switched off:
+
+1. Open **Scripts ▸ Plugins**. The tools from this repo are listed under
+   **Scripts Repository Tools**.
+2. Tick the ones you want. Each one appears in the **Scripts** toolset straight away, with
+   a small Python badge on its icon. Untick it to remove it again.
+
+If a plugin fails to load, its traceback is in the Python Console.
+
+## Use your own fork
+
+Fork this repository on GitHub, then in DSC Drafter choose **Scripts ▸ Scripts Repository…**:
+
+- **A fork on GitHub**: enter your fork's address (and branch, `main` if you leave it
+  blank) and press **Download and Use**. DSC Drafter downloads it, so you don't need Git
+  installed. Press it again to get your latest changes. The fork must be public.
+- **A folder on this computer**: point it at your clone of the fork while you work on it.
+  Edit a tool, then choose **Scripts ▸ Reload Scripts** to try it.
+- **Official scripts** switches back to the copy installed with DSC Drafter.
+
+The tools you switched on stay on when you change repository. Scripts from a fork run with
+the same access to your computer as DSC Drafter, so only use forks you trust.
+
+## Install a plugin of your own
 
 1. In DSC Drafter, choose **Scripts ▸ Open Scripts Folder**
    (normally `%APPDATA%\DSC Drafter\scripts\`).
-2. Copy a plugin folder into it, for example `tools/drawing/line_tool/`. Copy the whole
-   folder, `plugin.json` included.
-3. Choose **Scripts ▸ Reload Scripts**. Tools appear in the **Scripts** toolset with a small
-   Python badge on their icon. Commands appear in the **Scripts** menu.
+2. Copy the plugin folder into it. Copy the whole folder, `plugin.json` included.
+3. Choose **Scripts ▸ Reload Scripts**. Tools appear in the **Scripts** toolset. Commands
+   appear in the **Scripts** menu.
 
-Scripts ▸ Plugins lists every plugin and lets you switch each one off. If a plugin fails
-to load, its traceback is in the Python Console.
+Plugins in your scripts folder are on by default. If one has the same folder name as a
+tool in this repo, yours is the one that loads, so you can copy a tool here and change it.
 
 ## Your first tool in five minutes
 
