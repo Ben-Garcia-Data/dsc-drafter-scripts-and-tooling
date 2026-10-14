@@ -1,0 +1,6 @@
+{
+  "name": "Script Text Tool",
+  "version": "1.0",
+  "description": "The built-in Text tool rebuilt in Python: click or drag a box, typed W,H entry, a zoom warning, then hands off to the inline text editor (a dsc.Tool example).",
+  "dsc_api": "0.2"
+}

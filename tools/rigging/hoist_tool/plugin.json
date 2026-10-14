@@ -1,0 +1,6 @@
+{
+  "name": "Script Hoist Tool",
+  "version": "1.0",
+  "description": "The Hoist placement tool rebuilt in Python (chord snap + attach, a dsc.Tool proof tool).",
+  "dsc_api": "0.2"
+}

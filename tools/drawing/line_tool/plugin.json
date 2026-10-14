@@ -1,0 +1,6 @@
+{
+  "name": "Script Line Tool",
+  "version": "1.0",
+  "description": "The built-in Line tool rebuilt in Python: two-click + click-drag, length/bearing readout, typed length,angle entry (a dsc.Tool example).",
+  "dsc_api": "0.2"
+}

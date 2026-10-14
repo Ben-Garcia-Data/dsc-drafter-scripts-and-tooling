@@ -1,0 +1,6 @@
+{
+  "name": "Hello",
+  "version": "1.0.0",
+  "description": "Example plugin: adds 'Circle each selected object' to the Scripts menu.",
+  "dsc_api": "0.2"
+}

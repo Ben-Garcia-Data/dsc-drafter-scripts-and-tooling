@@ -1,0 +1,50 @@
+# DSC Drafter Python API (dsc) 0.2.0
+
+> Embedded Python for DSC Drafter. Scripts run inside the app against the open drawing;
+> each run (console line, script, command) is one undo step.
+
+Conventions (read conventions.md first):
+- Lengths in mm; plan X right, Y up (north on plan); Z up.
+- Angles in degrees, counter-clockwise seen from above.
+- Colours "#RRGGBB" or "#AARRGGBB".
+- Objects are held by id; a deleted object raises dsc.ObjectGone.
+- Use ObjectSet bulk calls (set/move/delete) at scale, not per-object Python loops.
+- Match objects on obj.type / doc.objects(type=...); Python classes are generic (most kinds are dsc.Object or dsc.Group).
+- `with doc.transaction("Name"):` makes its own undo step.
+
+Start: `import dsc; doc = dsc.doc(); doc.objects(type="Line")`.
+
+## Files
+- [conventions.md](conventions.md): units, axes, transactions, bulk rules, composites
+- [reference/dsc.md](reference/dsc.md): Top level: dsc.doc(), commands, the scripts folder, errors.
+- [reference/dsc.app.md](reference/dsc.app.md): The running application: active document, status bar, open/new.
+- [reference/dsc.Document.md](reference/dsc.Document.md): A drawing: queries, selection, layers, classes, sheets, transactions, save.
+- [reference/dsc.Object.md](reference/dsc.Object.md): Objects: attribute access, transform, typed Line / Circle / Text / Group / Layer / Class / Sheet (page setup) / Viewport / title blocks.
+- [reference/dsc.ObjectSet.md](reference/dsc.ObjectSet.md): Bulk operations over many objects (use these at scale, not Python loops).
+- [reference/dsc.ops.draw.md](reference/dsc.ops.draw.md): Draw primitives: the same operations the Line / Rectangle / Circle / Text tools commit.
+- [reference/dsc.ops.rigging.md](reference/dsc.ops.rigging.md): Rigging: place truss and hoists through the same layer the Truss / Hoist tools commit.
+- [reference/dsc.ops.lighting.md](reference/dsc.ops.lighting.md): Lighting: place library fixtures and assign DMX patch / channel / unit numbers.
+- [reference/dsc.ops.staging.md](reference/dsc.ops.staging.md): Staging: place stage decks through the same layer the Stage Deck tool commits.
+- [reference/dsc.ops.transform.md](reference/dsc.ops.transform.md): Transform a set of objects: move / rotate / scale / mirror / duplicate / array — the same commits the transform tools make.
+- [reference/dsc.ops.align.md](reference/dsc.ops.align.md): Align & distribute a set of objects — the same layout the Align & Distribute panel computes.
+- [reference/dsc.ops.dimension.md](reference/dsc.ops.dimension.md): Dimensions: place linear / aligned / radius dimensions through the same layer the dimension tools commit.
+- [reference/dsc.ops.boolean.md](reference/dsc.ops.boolean.md): Boolean: 2D shape union/difference/intersection and 3D solid CSG, the same commits the Boolean tools make.
+- [reference/dsc.ops.pushpull.md](reference/dsc.ops.pushpull.md): Push/pull: extrude a closed 2D shape into a solid, the same commit the Push/Pull tool makes.
+- [reference/dsc.ops.paperwork.md](reference/dsc.ops.paperwork.md): Paperwork: viewports from crop shapes, data tags, data tag styles, title block parts and layouts, the same objects the paperwork tools and the Library make.
+- [reference/dsc.ScheduleTable.md](reference/dsc.ScheduleTable.md): Live schedule tables: read rows / totals, re-fit with update(), export to CSV — returned by dsc.ops.paperwork.schedule_table.
+- [reference/dsc.data.md](reference/dsc.data.md): Data files stored in the drawing (CSV, JSON, ...): list, get, create and import them.
+- [reference/dsc.Data.md](reference/dsc.Data.md): One stored data file: read / write bytes, text, JSON or CSV, export a copy, provenance metadata.
+- [reference/dsc.inspect.md](reference/dsc.inspect.md): Read a drawing: overview, clusters of separate items, texts in reading order, world-space geometry with blocks expanded.
+- [reference/dsc.snap.md](reference/dsc.snap.md): Snap targets: attachment chords and free rig connection faces.
+- [reference/dsc.library.md](reference/dsc.library.md): Search the content library (symbols, fixtures, truss profiles).
+- [reference/dsc.presets.md](reference/dsc.presets.md): Schema presets: named value sets for an object type's schema (a library truss is one): read, make, save to the User Library, apply.
+- [reference/dsc.units.md](reference/dsc.units.md): The document display units: format and parse lengths the way the built-in tools show them.
+- [reference/dsc.ui.md](reference/dsc.ui.md): App UI a script can invoke: the library picker and the inline text editor (GUI-only).
+- [reference/dsc.Tool.md](reference/dsc.Tool.md): Interactive script tools: subclass dsc.Tool, register with dsc.register_tool.
+- [reference/object-types.md](reference/object-types.md): Attribute tables (name, unit, storage) for every drawing object type.
+- [dsc.pyi](dsc.pyi): type stub
+- [guides/reading-drawings.md](guides/reading-drawings.md): how to explore an imported DWG/DXF (start here to understand a drawing)
+- [guides/mcp-clients.md](guides/mcp-clients.md): connecting an AI client (Claude Code / Desktop) over MCP
+- [guides/showing-your-work.md](guides/showing-your-work.md): AI agents - keep the user's view on what you are doing (auto-focus, dsc.ui.focus)
+- [guides/](guides/): writing scripts and plugins
+- [examples/](examples/): annotated example scripts

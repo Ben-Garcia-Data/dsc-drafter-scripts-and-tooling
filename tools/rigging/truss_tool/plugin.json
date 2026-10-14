@@ -1,0 +1,6 @@
+{
+  "name": "Script Truss Tool",
+  "version": "1.0",
+  "description": "The Truss placement tool rebuilt in Python (Library + Straight modes, a dsc.Tool proof tool).",
+  "dsc_api": "0.2"
+}

@@ -1,0 +1,20 @@
+# Lint / type-check configuration only - this repo is not an installable package.
+# The `dsc` module exists only inside DSC Drafter; stubs/dsc.pyi describes it.
+
+[tool.ruff]
+target-version = "py313"
+line-length = 100
+extend-exclude = ["stubs"]
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "W", "B"]
+
+[tool.pyright]
+include = ["tools", "examples", "scripts"]
+stubPath = "stubs"
+pythonVersion = "3.13"
+typeCheckingMode = "basic"
+reportMissingModuleSource = false
+# Tools keep gesture state in fields that start as None (self.first, self.start) and
+# index them only once the click count / mode guarantees a value; Pyright cannot see that.
+reportOptionalSubscript = false

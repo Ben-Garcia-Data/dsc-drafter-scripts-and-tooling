@@ -1,0 +1,6 @@
+{
+  "name": "Script Circle Tool",
+  "version": "1.0",
+  "description": "The built-in Circle/Ellipse tool rebuilt in Python: Centre/Corner/Axis Ends modes, Shift circle constraint, typed R / W,H / axis entry (a dsc.Tool example).",
+  "dsc_api": "0.2"
+}
