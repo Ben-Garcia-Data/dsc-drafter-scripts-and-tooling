@@ -1,16 +1,6 @@
 # DSC Drafter Scripts
 
-Python tools, plugins and example scripts for **DSC Drafter**, plus the stubs and
-reference you need to write your own.
-
-DSC Drafter has Python built in. The `dsc` module gives scripts the same operations the
-built-in tools use. Every tool in this repo is a Python version of a built-in DSC Drafter
-tool, with the same modes, options, typed entry, snapping and preview, and it commits the
-same objects. Read them to see how a tool is built, or copy one to start your own.
-
-Everything here is under the **MIT licence**: use, copy, change and ship it, commercially
-or not. Keep the copyright and licence notice with any copy or substantial portion. See
-[LICENSE](LICENSE).
+DSC Drafter allows users to write their own Python tools to extend the capabilities of the program to suite their own needs. There are 5 example tools in this repo- Line, circle, Text, Hoist, Truss. They perform identically to the built-in tools and provide a strong foundation and examples for creating more tools.
 
 ## Turn on the tools in this repo
 
