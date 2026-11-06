@@ -1,6 +1,8 @@
-# DSC Drafter Scripts
+# DSC Drafter Open SDK
 
-DSC Drafter allows users to write their own Python tools to extend the capabilities of the program to suite their own needs. There are 5 example tools in this repo- Line, circle, Text, Hoist, Truss. They perform identically to the built-in tools and provide a strong foundation and examples for creating more tools.
+DSC Drafter is currently free & ships an open SDK for altering the core behaviour, adjusting tool behaviour and extending the program.
+
+DSC Drafter allows users to write their own Python tools to extend the capabilities of the program to suit their own needs. There are 5 example tools in this repo: Line, Circle, Text, Hoist, Truss. They perform identically to the built-in tools and provide a strong foundation and examples for creating more tools.
 
 ## Turn on the tools in this repo
 
